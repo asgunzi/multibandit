@@ -6,6 +6,8 @@
 <title>Bandido Múltiplos Braços JS D3</title>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<link rel="stylesheet" type="text/css"  href="../estilo_menu.css" />
+
 
 <style>  
 table {
@@ -26,6 +28,10 @@ p, div {
 
 <body>
 
+<div class="menu"></div>
+
+<a href = "../index.html"> <p id="Logo"></p> </a>
+
 
 <h1>O Bandido Múltiplos Braços</h1>
 
@@ -40,10 +46,10 @@ p, div {
 
 <table id = "maquinas">
   <tr>
-    <th><img src="onearmed.png" alt="Bandido de um braço"></th>
-    <th><img src="onearmed.png" alt="Bandido de um braço"></th>
-    <th><img src="onearmed.png" alt="Bandido de um braço"></th>
-	<th><img src="onearmed.png" alt="Bandido de um braço"></th>
+    <th><img src="../Figuras/bandido.png" alt="Bandido de um braço"></th>
+    <th><img src="../Figuras/bandido.png" alt="Bandido de um braço"></th>
+    <th><img src="../Figuras/bandido.png" alt="Bandido de um braço"></th>
+	<th><img src="../Figuras/bandido.png" alt="Bandido de um braço"></th>
   </tr>
   <tr>
     <th>Máq. 1</th>
@@ -149,10 +155,10 @@ var rodada =0;
 var fimJogo = false;
 
 //Sorteia probabilidades
-p1 = Math.random() 
-p2 = Math.random() 
-p3 = Math.random() 
-p4 = Math.random() 
+p1 = Math.random()*0.7;
+p2 = Math.random()*0.7;
+p3 = Math.random()*0.7;
+p4 = Math.random()*0.7;
 
 function Checagem()
 {
@@ -242,10 +248,25 @@ d3.select("#maq4").property("value", 0);
 
 if (rodada ==5)
 {
- divResults.innerHTML += "Fim de jogo. Você teve " + Total + " acertos!"
+ divResults.innerHTML += "Fim de jogo. Você teve " + Total + " acertos!";
+
+ let ProbReais = Math.round(p1*100,2) + "%, " + Math.round(p2*100,2) + "%, " + Math.round(p3*100,2) + "%, " +Math.round(p4*100,2) + "%";
+ divResults.innerHTML += "<br>";
+ divResults.innerHTML += "Probabilidades reais:  " + ProbReais;
+
  fimJogo = true;
 }
 }
 </script>
+
+
+<br>
+<hr>
+
+<p>Veja também: <a href = "https://ideiasesquecidas.com/"> Forgotten Lore - Ideias Técnicas com uma pitada de filosofia. </a> </p>
+
+<script src="../criaMenuL1.js"></script>
+<script src = "../LogoMath.js">		</script>
+	
 </body>
 </html>
